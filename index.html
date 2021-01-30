@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// part #1
+document.getElementById('first-class-increase').addEventListener("click", function(){
+            handleTicket(true);
+        });
+        document.getElementById('first-class-decrease').addEventListener("click", function(){
+            handleTicket(false);
+        });
+
+// part #2
+function firstClassTicket(ticketIncrease){
+        const firstClassInput = document.getElementById('first-class-count');
+        const firstClassCount = parseInt(firstClassInput.value);
+        let firstClassNewCount = firstClassCount;
+        if (ticketIncrease == true){
+            firstClassNewCount = firstClassCount + 1;
+        };
+        if (ticketIncrease == false && firstClassCount > 0){
+            firstClassNewCount = firstClassCount - 1;
+        };
+        firstClassInput.value = firstClassNewCount;
+        const firstClassTotal = firstClassNewCount * 150;
+        document.getElementById('first-class-total').innerText = '$' + firstClassTotal;
+        };
+
+        function economyClassTicket(ticketIncrease){
+        const firstClassInput = document.getElementById('economy-class-count');
+        const firstClassCount = parseInt(firstClassInput.value);
+        let firstClassNewCount = firstClassCount;
+        if (ticketIncrease == true){
+            firstClassNewCount = firstClassCount + 1;
+        };
+        if (ticketIncrease == false && firstClassCount > 0){
+            firstClassNewCount = firstClassCount - 1;
+        };
+        firstClassInput.value = firstClassNewCount;
+        const firstClassTotal = firstClassNewCount * 100;
+        document.getElementById('economy-class-total').innerText = '$' + firstClassTotal;
+        };
+
+// part #3
+document.getElementById('first-class-increase').addEventListener("click", function(){
+        const firstClassInput = document.getElementById('first-class-count');
+        const firstClassCount = parseInt(firstClassInput.value);
+        const firstClassNewCount = firstClassCount + 1;
+        firstClassInput.value = firstClassNewCount;
+        const firstClassTotal = firstClassNewCount * 150;
+        document.getElementById('first-class-total').innerText = '$' + firstClassTotal;
+        });
+
+        document.getElementById('first-class-decrease').addEventListener("click", function(){
+        const firstClassInput = document.getElementById('first-class-count');
+        const firstClassCount = parseInt(firstClassInput.value);
+        const firstClassNewCount = firstClassCount - 1;
+        firstClassInput.value = firstClassNewCount;
+        const firstClassTotal = firstClassNewCount * 150;
+        document.getElementById('first-class-total').innerText = '$' + firstClassTotal;
+        });
+    </script>
+</body>
+</html>
